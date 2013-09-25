@@ -1,0 +1,26 @@
+% use WH::Model::File;
+% use WH::Controller::File;
+% my $ctrl = WH::Controller::File->new;
+% my $user_id = $self->session('user_id');
+% my $file_id = $self->param('id');
+
+% if(defined $file_id && defined $user_id) {
+
+% my $file = $ctrl->_get_file($file_id) if defined $file_id;
+% layout 'file/preview_block';
+% if(defined $file && defined $user_id){
+
+  <h2><%= $file->name %></h2>
+  %= $self->render('file/preview/'.$file->get_class, file=>$file, partial=>1);
+
+  % if(scalar(keys %{$file->versions})>1){
+    <h2>Previous Versions</h2>
+    %= $self->render('file/version_list', file=>$file, user_id=>$user_id, partial=>1);
+  % }
+
+% }else{
+  <h2> File Not Found </h2>
+% }
+
+	
+% }

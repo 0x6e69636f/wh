@@ -1,0 +1,1 @@
+<a href='/do/file/get?id=<%= $file->file_id %>' class='sound_play' title='<%= $file->name %>'><img src='img/file_icon_sound.png' alt='music' class='file_icon'></a>

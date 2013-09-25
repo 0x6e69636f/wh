@@ -1,0 +1,10 @@
+% use WH::Model::User;
+% my $name = $self->param('name');
+% my $search = defined $name && length $name>0 ? WH::Model::User->find({name=>{'$regex'=>"\^$name"}}) : [];
+% my $own_id = $self->session('user_id');
+
+<ul id='people_search_resut_list'>
+% while (my $user  = $search->next){
+	<li><a href='<%= $user->_id->to_string %>' class='user_name_link'> <%= $user->name %> </a></li> 	
+% }
+</ul>

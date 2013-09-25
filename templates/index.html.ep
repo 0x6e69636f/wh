@@ -1,0 +1,14 @@
+% layout 'default';
+
+<div id='left' class='float'>
+  %= $self->render('file/dir', partial=>1);
+</div>
+
+<div id='center' class='float'>
+
+</div>
+
+<div id='right' class='float'>
+
+</div>
+        <hr>

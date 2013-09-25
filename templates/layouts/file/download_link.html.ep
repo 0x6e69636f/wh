@@ -1,0 +1,3 @@
+% my $file = $self->stash('file');
+% my $v = defined $self->stash('version') ? '&v='.$self->stash('version') : '';
+<a href='/do/File/get?id=<%= $file->file_id; %><%= $v; %>'><img src='img/download-cloud.png' alt='Download' class='file_icon'> <%= content %></a>

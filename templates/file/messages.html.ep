@@ -1,0 +1,19 @@
+% use WH::Model::File;
+% my $user_id = $self->session('user_id');
+% my $dir = $self->param('dir') || '';  
+
+% if(defined $user_id){
+<div id='dir_block'>
+panda !
+    <div id='file_list_block'>
+        %= $self->render(template=>'file/list', partial=>1, dir=>$dir);
+    </div>
+    <div id='upload_form'>
+        <form id='file_upload_form' method='POST' action='/do/File/upload' enctype='multipart/form-data'>
+            <input type='file' name='files' id='file_uploader_input' multiple>
+            <input type='hidden' name='parent' id='file_uploader_parent' value='<%= $dir %>'>
+            <input type='submit' class='edition_submit'>
+        </form>
+    </div>
+</div>
+% }

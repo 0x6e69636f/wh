@@ -1,0 +1,343 @@
+body {
+    font-family: Arial;
+  background-color: white;
+  color:black;
+
+}
+
+hr {
+    display: none;
+    clear: both;
+}
+
+a {
+    color: rgb(166, 183, 196);
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkorange;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+
+}
+
+input[type='text'], textarea{
+  border: solid gray 1px;
+  padding: 5px;
+}
+
+input, textarea, select {
+    display: block;
+    font-family: Arial;
+}
+
+.bg_block {
+    /*background-color: #f0f8ff;*/
+    background-color: rgb(213, 224, 255);
+}
+
+textarea {
+    height: 100px;
+}
+
+#login_block {
+    padding: 10px;
+    margin-left: 80px;
+    width: 300px;
+}
+
+#login_block form {
+    margin-bottom: 50px;
+}
+
+#login_block form input {
+    margin-top: 10px;
+}
+
+#content {
+    height: 98%;
+    float: left;
+}
+
+
+/*
+#file_uploader_hidden_input{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}*/
+
+#menu {
+    width: 50px;
+    text-align: left;
+    left: 0;
+    top: 80px;
+    position: fixed;
+  /*
+    background-color: #1F4661; */
+}
+
+#menu a img {
+    padding: 4px;
+    /*background-color: black;*/
+    /*border-radius: 10px;*/
+}
+
+#menu a:hover img {
+    background-color: cornflowerblue;
+}
+
+#upload_form{
+  display: inline;
+}
+
+#audio_player{
+  display: inline-block;
+}
+
+#upload_form_cloud_button {
+    margin-right: 10px;
+    padding: 3px;
+}
+
+#upload_form_cloud_button:hover {
+    background-color: cornflowerblue;
+}
+
+#file_upload_form * {
+    vertical-align: text-bottom;
+}
+
+#file_upload_form input {
+    display: inline;
+}
+
+.float {
+    width: 50px;
+    float: left;
+    /*margin-right: 15px;*/
+   /* border-right: #C0C0BB solid 1px;;*/
+}
+
+#top {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: #C0C0BB solid 1px;
+  text-align: center;
+}
+
+#left {
+    min-width: 300px;
+    margin-left: 60px;
+}
+
+#center, #right {
+    min-width: 300px;
+    padding: 20px;
+}
+
+.file_version_list_element{
+    padding-bottom: 2px;
+    margin-bottom: 12px;
+    border-bottom: #EBEFE7 solid 1px;;
+
+}
+
+.version_time{
+  display: block;
+    text-align:right;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.preview_image{
+    max-width: 100%;
+    text-align: center;
+}
+
+
+#dir_block_nav *{
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#new_dir_block{
+  vertical-align: middle;
+}
+
+#new_dir_name {
+  display: inline;
+}
+
+#file_list {
+    min-height: 300px;
+    margin-right: 15px;
+}
+
+.file_type{
+  width:20px;
+  background-color: gray;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.file_type_dir{
+  background-color: orange;
+}
+
+.file_type_image{
+  background-color: green;
+}
+
+.file_type_sound{
+  background-color: #0000ff;
+}
+
+.file_icon, .dir_icon{
+  margin-right: 10px;
+}
+
+.file_list_element, .file_message_list_element {
+    margin-bottom: 5px;
+    padding: 5px;
+    vertical-align: middle;
+
+    border: #EBEFE7 solid 1px;
+    border-radius: 3px;
+}
+
+.file_message{
+  display: block;
+}
+
+.file_infos{
+  font-size: 0.7em;
+  opacity: 0.5;
+  font-style: italic;
+  display: block;
+  text-align: right;
+}
+
+.type_icon {
+    margin-right: 10px;
+}
+
+
+.file_delete_icon_link {
+    float: right;
+    opacity: 0.2;
+}
+
+.file_delete_icon_link:hover{
+    opacity: 1;
+}
+
+.type_list_element .type_icon {
+    vertical-align: text-top;
+}
+
+.qs_list_element .type_icon {
+    vertical-align: text-bottom;
+}
+
+#question_set_content_editors_block input[type="text"], textarea, select {
+    display: block;
+    width: 98%;
+    margin: 10px 0;
+}
+
+.question_set_content_editor_list_element {
+    padding: 2%;
+    margin-top: 20px;
+}
+
+.question_editor_form {
+    margin-top: 10px;
+}
+
+.editor_question_title {
+    font-weight: bold;;
+}
+
+.editor_question_type_name {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.editor_question_delete {
+    float: right;
+}
+
+#question_set_params_form {
+    padding: 10px;
+}
+
+.edition_submit {
+    margin-top: 20px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: #7cff9e;
+    display: inline;
+}
+
+.cancel_edition_submit {
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    border: none;
+   /* background: none;*/
+    background-image: url("../img/hatch.png");
+    display: inline;
+}
+
+.submit_btn_on_form_changed, .cancel_edition_submit:hover {
+    background-color: #dc322f;
+}
+
+.edition_submit:hover {
+    background-color: darkorange;
+}
+
+.question input, select {
+    display: block;
+    width: 99%;
+    margin: 10px 0;
+}
+
+.question_description {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.code_question_textarea {
+    margin-top: 30px;
+    height: 500px;
+}
+
+#submit_question_set_form {
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color: #7cff9e;
+}
+
+#submit_question_set_form:hover {
+    background-color: darkorange;
+}
+
+.editor_label {
+    font-style: italic;
+}
+
+
+

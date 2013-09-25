@@ -1,0 +1,2 @@
+% my $v = defined $self->stash('version') ? '&v='.$self->stash('version') : '';
+<img src='/do/File/get?id=<%= $file->_id->to_string; %><%= $v %>' alt='<%= $file->name %>' class='preview_image'>

@@ -1,0 +1,46 @@
+% use WH::Model::File;
+% my $user_id = $self->session('user_id');
+% my $dir = $self->param('dir') || '';    
+% my $dir_file = WH::Model::File->find_one($dir);
+% if(defined $user_id){
+
+    <div id='dir_block_nav'>
+        <a href='' class='dir_link' title='Home'><img src='img/home.png' alt='Home'></a>
+        <a href='<%= $dir_file->parent if defined $dir_file %>' class='dir_link' title='Back' id='dir_back_link'><img src='img/arrow-curve-180-left.png' alt='Back'></a>
+
+        <form action='/do/File/create_dir' id='new_dir_form' method='POST'>
+          <img src='img/luggage--plus.png' alt='new dir'>
+          <input type='text' name='name' id='new_dir_name' placeholder="New Dir Name">
+          <input type='hidden' name='parent' id='new_dir_parent' value='<%= $dir %>'>
+        </form>
+    </div>
+
+    <h2><%= defined $dir_file ? $dir_file->name : 'Home' %> </h2>
+    
+	<ul id='file_list'>
+		% my $files = WH::Model::File->find({parent=>$dir, removed=>0});
+		% while(my $file=$files->next){
+			<li class='file_list_element'>
+				% #= $self->render('file/link/'.$file->get_class, partial=>1, file=>$file);
+
+				% if ($file->dir){
+					<!-- <span class='file_type file_type_<%= $file->get_class %>'>&nbsp;-->
+					<a href='<%= $file->_id->to_string %>' class='dir_icon_link <%= $file->get_class %>'><img src='img/luggage-tag.png' alt='dir' class='dir_icon'>&nbsp;</a></span>
+					<a href='<%= $file->_id->to_string %>' class='dir_link' title='<%= $file->name %>'><%= $file->name %></a>
+				% }else{
+					<!-- <span class='file_type file_type_<%= $file->get_class %>'>&nbsp; -->
+					<a href='<%= $file->_id->to_string %>' class='file_icon_link <%= $file->get_class %>'><img src='img/file_icon_<%= $file->get_class %>.png' alt='<%= $file->get_class %>' class='file_icon'>&nbsp;</a></span>
+					<a href='<%= $file->_id->to_string %>' class='file_link' title='<%= $file->name %>'><%= $file->name %></a>
+				% }
+
+        % if($file->owner_id eq $user_id){
+            <a href='<%= $file->_id->to_string %>' class='file_delete_icon_link'><img src='img/cross-button.png' alt='delete' class='file_delete_icon'></a>
+            <hr>
+        % }
+
+			</li>
+		% }
+	</ul>
+
+
+% } 

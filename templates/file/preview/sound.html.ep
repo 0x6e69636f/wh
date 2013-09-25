@@ -1,0 +1,2 @@
+% layout 'file/download_link';
+<%= $file->name %>

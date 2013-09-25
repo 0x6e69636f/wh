@@ -1,0 +1,29 @@
+% use WH::Model::File;
+% use WH::Model::User;
+% use POSIX qw(strftime);
+% my $user_id = $self->session('user_id');
+% my $file_id = $self->param('id');
+% my $file = WH::Model::File->find_one($file_id) if defined $file_id;
+% if(defined $file && defined $user_id){
+  <h2>Comments</h2>
+  <ul id='file_messages_list'>
+  	% for my $message (@{$file->messages}){
+  		% my $author = WH::Model::User->find_one($message->author);
+  		% if(defined $author){
+	  		<li class='file_message_list_element'>
+	  			<span class='file_message'><%= $message->content; %></span>
+	  			<span class='file_infos'><a href='#'><%= $author->name; %></a> - <%= strftime("%d/%m/%Y - %H:%M", localtime($message->date)); %> </span>
+	  		</li>
+  		% }
+  	% }
+  </ul>
+
+  <form action='/do/File/message' method='POST' id='new_file_message_form'>
+  	<textarea type='text' name='content' placeholder='Your comment'></textarea>
+  	<input type='submit' class='edition_submit'>
+  	<input type='hidden' name='file_id' value='<%= $file->file_id; %>'>
+  </form>
+
+% }else{
+  <h2>File Not Found</h2>
+% }

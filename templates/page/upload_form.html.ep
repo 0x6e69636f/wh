@@ -1,0 +1,9 @@
+<div id='upload_form'>
+  <h2>Upload New file</h2>
+  <form id='file_upload_form' method='POST' action='/do/File/upload' enctype='multipart/form-data'>
+    <!--<input type='image' value='submit' src='img/cloud.png' id='upload_form_cloud_button'>-->
+    <input type='file' name='files' id='file_uploader_input' multiple>
+    <input type='submit' class='edition_submit'>
+    <!--<a href='#' id="file_uploader_button"><img src='img/cloud.png'></a>-->
+  </form>
+</div>

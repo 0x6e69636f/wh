@@ -1,0 +1,7 @@
+<div class='preview_block'>
+% if(defined $file){
+  <%= content %>
+% } else {
+	<h2> File Not Found </h2>	
+% }
+</div>

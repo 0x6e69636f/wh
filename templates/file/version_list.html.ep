@@ -1,0 +1,19 @@
+% use POSIX qw/strftime/;
+% if(defined $file){
+    <ul id='file_version_list'>
+
+    % my @versions = sort {$b <=> $a} (keys $file->versions); 
+    % shift @versions;
+    % for my $time (@versions) {
+    % my $version = $file->versions->{$time};
+      
+      <li class='file_version_list_element'>
+
+          %= $self->render(template=>'file/preview/'.$file->get_class, file=>$file, version=>$time, partial=>1);
+          <span class='version_time'><%= strftime("%d/%m/%Y - %H:%M", localtime($time)); %></span>
+
+      </li>
+    % }
+  </ul>
+
+% }

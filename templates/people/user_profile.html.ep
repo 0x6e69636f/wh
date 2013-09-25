@@ -1,0 +1,9 @@
+% use WH::Model::User;
+% my $user_id = $self->param('id');
+% my $user = WH::Model::User->find_one($user_id);
+
+% if(defined $user){
+	<h2> <%= $user->name %> </h2>
+% } else {
+	<h2> User not found ! </h2>
+% }

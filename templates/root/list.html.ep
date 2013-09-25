@@ -1,0 +1,26 @@
+% use WH::Model::File;
+% use WH::Model::User;
+% use WH::Model::Root;
+
+% my $user_id = $self->session('user_id');
+
+% if(defined $user_id){
+
+        <div id='root_creation_block'>
+            <form action='/do/Root/create' id='root_creation_form' method='POST'>
+                <img src='img/leaf-plant.png' alt='new root'>
+                <input type='text' name='name' id='new_root_name'>
+            </form>
+        </div>
+
+        <ul id='root_list'>
+            my $roots =  WH::Model::Root->find({owner=>$user_id});
+            <li>
+
+
+
+            </li>
+        </ul>
+
+% }
+

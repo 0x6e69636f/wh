@@ -1,0 +1,23 @@
+% layout 'default';
+% title 'Qstn : A Question Set Builder';
+<div id='login_block'>
+  <form id='login_form' action='/do/User/login' method='POST'>
+    <label>Login</label>
+    <input type='text' name='login'>
+    <label>Password</label>
+    <input type='password' name='password'>
+    <input type='submit'>
+  </form>
+
+  <form id='register_form' action='/do/User/create' method='POST'>
+    <label>Login</label>
+    <input type='text' name='login'>
+    <label>Name</label>
+    <input type='text' name='name'>
+    <label>Password</label>
+    <input type='password' name='pwd1'>
+    <label>Password Confirmation</label>
+    <input type='password' name='pwd2'>
+    <input type='submit'>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+% # $self->render('file/list', partial=>1);
+
+<h2> People </h2>
+
+<form id='people_search_form' method='POST' action='/show/People/list'>
+<input type='text' placeholder='Name search' name='name'>
+</form>
+
+<div id='people_search_result_block'>
+	<!-- Search Results will appear here -->
+</div>
