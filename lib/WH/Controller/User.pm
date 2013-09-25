@@ -25,7 +25,7 @@ sub create{
 	$err = "Name undefined" if (!defined $name || length $name==0) && !defined $err;
 	$err = "Passwords undefined" if (!defined $pwd1 || !defined $pwd2) && !defined $err;
 	$err = "Invalid Passwords" if (length $pwd1<4 || $pwd1 ne $pwd2) && !defined $err;
-	$err = "This name is forbidden" if (firstidx{$name eq $_}) && !defined $err;
+	$err = "This name is forbidden" if (firstidx{$name eq $_})>=0 && !defined $err;
 
 	if(!defined $err){
 		my $password = md5_hex($pwd1);

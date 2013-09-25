@@ -5,6 +5,10 @@
 
 <ul id='people_search_resut_list'>
 % while (my $user  = $search->next){
-	<li><a href='<%= $user->_id->to_string %>' class='user_name_link'> <%= $user->name %> </a></li> 	
+	<li class='list_element'>
+		<a href='<%= $user->_id->to_string %>' class='user_name_link'> <%= $user->name %> </a>
+		<a href='<%= $user->_id->to_string %>' class='user_send_friend_request_link floating_icon'><img src='img/plus.png' alt='send friend request' class='send_friend_request_icon list_element_icon'></a>
+        <hr>
+	</li> 	
 % }
 </ul>

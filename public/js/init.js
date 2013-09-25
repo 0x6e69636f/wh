@@ -65,6 +65,7 @@ var init = function () {
     });
   });
 
+
   $('#content').on('click', '.sound', function (e) {
     $('#audio').attr('src', '/do/file/get?id=' + $(this).attr('href'));
     $('#audio').get(0).play();
@@ -97,9 +98,16 @@ var init = function () {
 var init_people_page_content = function () {
   $('#people_search_form').ajaxForm({
     success: function (list) {
+
       $('#people_search_result_block').html(list);
+
       $('.user_name_link').on('click', function(e){
         load_user_profile($(this).attr('href'), '#right');
+        e.preventDefault();
+      });
+
+      $('.user_send_friend_request_link').on('click', function(e){
+        send_friend_request($(this).attr('href'));
         e.preventDefault();
       });
     }
@@ -151,7 +159,19 @@ var load_user_profile = function (user_id, block) {
   $(block).load('/show/people/user_profile?id='+user_id);
 };
 
-
+var send_friend_request = function(user_id){
+  $.ajax({
+    url:'/do/Friendship/send_request',
+    data:{user_id:user_id},
+    success:function(data){
+      if(data.success){
+        alert('Request Sent!')
+      }else{
+        alert(data.msg);
+      }
+    }
+  })
+}
 
 
 

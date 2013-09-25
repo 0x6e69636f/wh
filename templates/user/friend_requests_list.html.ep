@@ -1,0 +1,14 @@
+% use WH::Model::User;
+% my $user = WH::Model::User->find_one($user);
+<h2> Friend Requests </h2>
+% my $friend_requests = $user->friend_requests;
+<ul id='friend_request_list'>
+% for my $requester_id (@$friend_requests) {
+	% my $requester = WH::Model::User->find_one($requester_id);
+	<li class='friend_request_list_element list_element'>
+		<%= $requester->name %>
+		<a href='<%= $requester->_id->to_string %>' class='user_accept_friend_request_link'><img src='img/plus.png' alt='accept friend request' class='accept_friend_request_icon list_element_icon'></a>
+    	<hr>
+	</li>
+%}
+</ul>

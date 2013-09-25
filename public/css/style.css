@@ -134,7 +134,7 @@ textarea {
 }
 
 #left {
-    min-width: 300px;
+    min-width: 400px;
     margin-left: 60px;
 }
 
@@ -205,13 +205,22 @@ textarea {
   margin-right: 10px;
 }
 
-.file_list_element, .file_message_list_element {
+.file_list_element, .file_message_list_element, .list_element {
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 10px;
     vertical-align: middle;
 
     border: #EBEFE7 solid 1px;
     border-radius: 3px;
+}
+
+.list_element_icon {
+  float: right;
+  opacity: 0.2;
+}
+
+.list_element_icon:hover {
+  opacity: 1;
 }
 
 .file_message{
@@ -231,18 +240,31 @@ textarea {
 }
 
 
+
+
 .file_delete_icon_link {
-    float: right;
-    opacity: 0.2;
+  float: right;
+  opacity: 0.2;
 }
 
-.file_delete_icon_link:hover{
+
+.file_delete_icon_link:hover {
     opacity: 1;
 }
 
 .type_list_element .type_icon {
     vertical-align: text-top;
 }
+
+
+.user_accept_friend_request_link {
+  float: right;
+}
+
+.friend_request_list_element{
+  width: 100%;
+}
+
 
 .qs_list_element .type_icon {
     vertical-align: text-bottom;

@@ -20,12 +20,12 @@
 	<ul id='file_list'>
 		% my $files = WH::Model::File->find({parent=>$dir, removed=>0});
 		% while(my $file=$files->next){
-			<li class='file_list_element'>
+			<li class='list_element'>
 				% #= $self->render('file/link/'.$file->get_class, partial=>1, file=>$file);
 
 				% if ($file->dir){
 					<!-- <span class='file_type file_type_<%= $file->get_class %>'>&nbsp;-->
-					<a href='<%= $file->_id->to_string %>' class='dir_icon_link <%= $file->get_class %>'><img src='img/luggage-tag.png' alt='dir' class='dir_icon'>&nbsp;</a></span>
+					<a href='<%= $file->_id->to_string %>' class='dir_icon_link <%= $file->get_class %>'><img src='img/luggage-tag.png' alt='dir' class='dir_icon list_element_icon'>&nbsp;</a></span>
 					<a href='<%= $file->_id->to_string %>' class='dir_link' title='<%= $file->name %>'><%= $file->name %></a>
 				% }else{
 					<!-- <span class='file_type file_type_<%= $file->get_class %>'>&nbsp; -->
@@ -34,7 +34,7 @@
 				% }
 
         % if($file->owner_id eq $user_id){
-            <a href='<%= $file->_id->to_string %>' class='file_delete_icon_link'><img src='img/cross-button.png' alt='delete' class='file_delete_icon'></a>
+            <a href='<%= $file->_id->to_string %>' class='file_delete_icon_link'><img src='img/cross-button.png' alt='delete' class='file_delete_icon floating_icon'></a>
             <hr>
         % }
 
